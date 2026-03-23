@@ -1,0 +1,23 @@
+$primary-color: #0D72F1;
+$secondary-color: #5D77AD;
+$tertiary-color: #D86000;
+$neutral-color: #747780;
+
+.noto-sans-sc {
+  font-family: "Noto Sans SC", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans SC", sans-serif;
+  background-color: #F8F9FB;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
