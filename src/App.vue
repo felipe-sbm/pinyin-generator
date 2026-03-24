@@ -6,9 +6,13 @@ import "./style.scss";
 </script>
 
 <template>
-  <Header></Header>
-  <div class="container">
-    <router-view />
+  <div class="app-shell">
+    <Header></Header>
+    <main class="app-content">
+      <div class="container">
+        <router-view />
+      </div>
+    </main>
+    <Footer></Footer>
   </div>
-  <Footer></Footer>
 </template>

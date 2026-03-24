@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo">
-      <a href="/">Inkstone (烟台)</a>
+      <a href="/">Inkstone <span>(烟台)</span></a>
     </div>
 
     <nav>
@@ -25,11 +25,13 @@
 header {
   position: sticky;
   top: 0;
-  background-color: #fefefe;
+  background-color: #fefefea9;
+  backdrop-filter: blur(7px);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000 !important;
 
   .logo a {
     margin: 0;
@@ -37,6 +39,12 @@ header {
     font-size: 1.25rem;
     color: $primary-color;
     text-decoration: none;
+    
+    span {
+      font-weight: normal;
+      font-size: 0.75rem;
+      color: $secondary-color;
+    }
   }
 
   nav {

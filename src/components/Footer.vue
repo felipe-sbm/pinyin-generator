@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { FolderRoot, BadgeAlert, Smile } from "@lucide/vue";
+import NotByAI from "@/assets/CN/chinese-light.png";
 </script>
 
 <template>
@@ -15,11 +16,21 @@ import { FolderRoot, BadgeAlert, Smile } from "@lucide/vue";
       <a href="https://github.com/felipe-sbm/inkstone">
         <FolderRoot class="icon" />Code Source
       </a>
+      <span>•</span>
       <a href="https://github.com/felipe-sbm/inkstone/issues">
         <BadgeAlert class="icon" />Report Issue
       </a>
-      <a href="https://opensource.com/resources/what-open-source"> <Smile class="icon" />What is Open Source? </a>
+      <span>•</span>
+      <a href="https://opensource.com/resources/what-open-source">
+        <Smile class="icon" />What is Open Source?
+      </a>
     </nav>
+
+    <div>
+      <a href="https://notbyai.fyi/" target="_blank" rel="noopener noreferrer">
+        <img :src="NotByAI" alt="Not by AI" />
+      </a>
+    </div>
   </footer>
 </template>
 
@@ -47,6 +58,7 @@ footer {
   }
   nav {
     display: flex;
+    gap: 1rem;
   }
 
   nav .icon {
@@ -60,10 +72,20 @@ footer {
     align-items: center;
   }
 
-  nav a:not(:last-child)::after {
-    content: "•";
-    margin: 0 1rem;
+  nav span {
     color: $neutral-color;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  img {
+    height: 2rem;
+    opacity: 0.75;
+    transition: 500ms;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 </style>
