@@ -1,14 +1,20 @@
 <template>
   <header>
     <div class="logo">
-      <a href="/">Inkstone <span>(砚台)</span></a>
+      <RouterLink to="/" exact-active-class="active"
+        >Inkstone <span>(砚台)</span></RouterLink
+      >
     </div>
 
     <nav>
-      <a href="/">首页</a>
-      <a href="/generate">生成拼音</a>
-      <a href="/write">写作</a>
-      <a href="/about">关于该项目</a>
+      <RouterLink to="/" exact-active-class="active">首页</RouterLink>
+      <RouterLink to="/generate" exact-active-class="active"
+        >生成拼音</RouterLink
+      >
+      <RouterLink to="/write" exact-active-class="active">写作</RouterLink>
+      <RouterLink to="/about" exact-active-class="active"
+        >关于该项目</RouterLink
+      >
     </nav>
 
     <select id="lang" title="Select your language">
