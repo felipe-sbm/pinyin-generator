@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Yang from "@/assets/yang.webp";
+import Features from "@/components/Features.vue";
 import { Star } from "@lucide/vue";
 </script>
 <!-- O melhor conversor de Hanzi para Pinyin -->
@@ -36,7 +37,13 @@ import { Star } from "@lucide/vue";
     </div>
   </section>
 
-  <section class="features"></section>
+  <section class="features">
+    <div class="title">
+      <h2>Por que usar o Inkstone?</h2>
+      <h3>Descubra os benefícios de utilizar nossa ferramenta.</h3>
+    </div>
+    <Features />
+  </section>
 
   <section class="bottom">
     <div class="card">
@@ -67,7 +74,7 @@ import { Star } from "@lucide/vue";
 @use "@/style.scss" as *;
 
 .hero {
-  padding: 1rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -152,8 +159,33 @@ import { Star } from "@lucide/vue";
   }
 }
 
+.features {
+  margin: 1rem 2rem 3rem 2rem;
+
+  .title {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      color: $neutral-color;
+      font-weight: 500;
+      margin-top: 0;
+    }
+  }
+}
+
 .bottom {
-  margin-top: 4rem;
+  margin: 6rem 0;
   display: flex;
   justify-content: center;
 

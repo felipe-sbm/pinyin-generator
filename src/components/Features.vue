@@ -1,0 +1,165 @@
+<script setup lang="ts">
+import { BeanOffIcon, BugPlay, SmilePlus, Zap } from "@lucide/vue";
+</script>
+
+<template>
+  <div class="features">
+    <div class="cell feature-1">
+      <h1><SmilePlus /></h1>
+      <h2>Sem propagandas e sem coleta de dados</h2>
+      <p>
+        O intuito não é ganhar dinheiro e nem coletar dados como uma big tech
+        faz. O propósito é criar uma ferramenta leve e simples que qualquer um
+        que quiser aprender mandarim, apenas entre e aprenda. Sem login, sem
+        propagandas, sem distrações. Apenas você.
+      </p>
+    </div>
+    <div class="cell feature-2">
+      <h1><Zap /></h1>
+      <h2>Veloz, e zás...</h2>
+      <p>
+        O processamento local mantém o Inkstone rápido e com privacidade total.
+        Pois não usamos nenhum servidor, tudo é no seu dispositivo.
+      </p>
+    </div>
+    <div class="cell feature-3">
+      <h1>
+        <BeanOffIcon />
+      </h1>
+      <h2>Banco de Dados Unihan</h2>
+      <p>
+        Uma base confiável e atualizada. Garanto que suas respostas serão
+        precisas. ;)
+      </p>
+    </div>
+    <div class="cell feature-4">
+      <div class="content">
+        <h1><BugPlay /></h1>
+        <h2>Achou um bug aí?</h2>
+        <p>
+          Estamos em fase de desenvolvimento, mas fique tranquilo, nosso projeto
+          é open-source, e se quiser contribuir, acesse um dos links do rodapé.
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="scss">
+@use "@/style.scss" as *;
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+  padding: 2rem 0;
+  margin-top: 0;
+
+  .cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 1.5rem;
+    padding: 2.2rem 2.3rem;
+    position: relative;
+    overflow: hidden;
+
+    h1 {
+      margin: 0;
+    }
+
+    h2 {
+      margin: 0;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0.8rem 0 0;
+      line-height: 1.45;
+    }
+  }
+
+  .feature-1 {
+    background-color: #eef0f4;
+    color: $neutral-color;
+    grid-column: span 2;
+
+    h1 {
+      color: $tertiary-color;
+    }
+
+    h2 {
+      color: #131a27;
+    }
+  }
+
+  .feature-2 {
+    background-color: #dfe9fb;
+    color: $neutral-color;
+
+    h1 {
+      color: $primary-color;
+    }
+
+    h2 {
+      color: #0f1a2d;
+    }
+  }
+
+  .feature-3 {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  .feature-4 {
+    background-color: #e2e5ea;
+    color: $neutral-color;
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    h1 {
+      color: $secondary-color;
+    }
+
+    h2 {
+      color: black;
+    }
+  }
+
+  @media (max-width: 980px) {
+    grid-template-columns: 1fr;
+
+    .easy,
+    .fast,
+    .free,
+    .no-ai {
+      min-height: 240px;
+      grid-column: span 1;
+    }
+
+    .easy {
+      &::before,
+      &::after {
+        opacity: 0.45;
+      }
+    }
+
+    .no-ai {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .content {
+        max-width: 100%;
+      }
+
+      .preview {
+        width: min(100%, 340px);
+      }
+    }
+  }
+}
+</style>
