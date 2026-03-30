@@ -133,22 +133,22 @@ import { BeanOffIcon, BugPlay, SmilePlus, Zap } from "@lucide/vue";
   @media (max-width: 980px) {
     grid-template-columns: 1fr;
 
-    .easy,
-    .fast,
-    .free,
-    .no-ai {
+    .feature-1,
+    .feature-2,
+    .feature-3,
+    .feature-4 {
       min-height: 240px;
       grid-column: span 1;
     }
 
-    .easy {
+    .feature-1 {
       &::before,
       &::after {
         opacity: 0.45;
       }
     }
 
-    .no-ai {
+    .feature-4 {
       flex-direction: column;
       align-items: flex-start;
 

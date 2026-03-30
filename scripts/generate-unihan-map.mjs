@@ -1,5 +1,21 @@
 #!/usr/bin/env node
 
+/* 
+======== AVISO! ========
+
+Este arquivo foi gerado na IA do Copilot da Microsoft,
+pois usei para transformar todo o banco de dados do Unihan
+em um mapa de caracteres para leitura em mandarim.
+
+O script lê o conteúdo do arquivo Unihan_Readings.txt via stdin,
+processa as linhas para extrair os caracteres chineses e suas leituras
+em mandarim, e então gera um arquivo JSON com o mapeamento.
+
+Essa foi a única parte em que um modelo de LLM foi usado no desenvolviemento.
+Lembre-se que deixei aqui apenas para consulta e transparência, já que isso ajudou
+muito a acelerar o processo de criação do mapa de leitura, mas não é parte do código-fonte.
+================
+*/
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 
