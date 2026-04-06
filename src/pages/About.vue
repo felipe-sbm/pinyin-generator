@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import BottomCard from "@/components/BottomCard.vue";
 import Server from "@/assets/server.webp";
-import { BeanOff, GlobeX, ServerCrash } from "@lucide/vue";
+import {
+  BadgeDollarSign,
+  BeanOff,
+  GlobeX,
+  HardDriveDownload,
+  Leaf,
+  ServerCrash,
+} from "@lucide/vue";
 </script>
 
 <template>
@@ -66,30 +73,56 @@ import { BeanOff, GlobeX, ServerCrash } from "@lucide/vue";
   </section>
 
   <section class="about-solution">
-    <h2>Solução</h2>
-    <p>
-      O Inkstone utiliza mapeamento otimizado em JavaScript para converter Hanzi
-      em Pinyin com rapidez, funcionando direto no navegador.
-    </p>
+    <div class="about-solution-heading">
+      <span>A Solução</span>
+      <h2>Aplicando a Lógica <i>Client-Side Rendering</i></h2>
+      <p>
+        O uso de processamento diretamente no navegador, com código leve e
+        simples, permite um uso mais rápido e menos custoso, sem a necessidade
+        de grandes modelos ou dependência de nuvem.
+      </p>
+    </div>
 
-    <div class="about-solution-grid">
-      <article class="about-solution-card">
-        <h3>Código leve</h3>
-        <p>Inicialização rápida e experiência mais fluida.</p>
-      </article>
+    <div class="about-solution-content">
+      <div class="about-solution-column">
+        <article class="about-solution-card">
+          <span><Leaf :size="25" /></span>
+          <h3>Menos uso de dados</h3>
+          <p>
+            Pelo fato de que o processamento ocorre localmente, é necessário um
+            único carregamento para o sistema inteiro funcionar.
+          </p>
+          <!-- Ficou muito grande o texto que fiz, mas para salvar vou deixar aqui: -->
+          <!--
+            Não sendo necessária a transferência de dados, o que reduz o consumo de dados
+            e torna a experiência mais fluida, mesmo em conexões lentas ou instáveis.
+          -->
+        </article>
+      </div>
 
-      <article class="about-solution-card">
-        <h3>Processamento local</h3>
-        <p>Menor dependência da nuvem e mais privacidade para o usuário.</p>
-      </article>
+      <div class="about-solution-column">
+        <article class="about-solution-card">
+          <span><HardDriveDownload :size="25" /></span>
+          <h3>Download do site</h3>
+          <p>
+            O site pode ser baixado e utilizado offline, sem necessidade de
+            conexão contínua. Pois todo o banco de dados está otimizado e
+            inbutido no código, para não ocupar muito espaço (edge computing).
+          </p>
+        </article>
+      </div>
 
-      <article class="about-solution-card">
-        <h3>Suporte offline</h3>
-        <p>
-          Conversão disponível mesmo em ambientes sem internet. Apenas
-          realizando o download do site.
-        </p>
-      </article>
+      <div class="about-solution-column">
+        <article class="about-solution-card">
+          <span><BadgeDollarSign :size="25" /></span>
+          <h3>Custo operacional mínimo</h3>
+          <p>
+            Já que o sistema é simples e não requer infraestrutura pesada.
+            Deixamos sem nenhum tipo de monetização, sem propagandas chatas e
+            sem cobrança de uso de serviço.
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -192,8 +225,8 @@ import { BeanOff, GlobeX, ServerCrash } from "@lucide/vue";
       display: inline-block;
       margin-bottom: 0.75rem;
       font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
+      font-weight: bold;
+      letter-spacing: 0.15rem;
       text-transform: uppercase;
       color: $tertiary-color;
     }
@@ -277,38 +310,94 @@ import { BeanOff, GlobeX, ServerCrash } from "@lucide/vue";
 }
 
 .about-solution {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  background-color: #f1f4f8;
-  border: 1px solid #e2e7ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 
-  h2 {
-    font-size: 1.75rem;
-    margin: 0;
-  }
+  .about-solution-heading {
+    max-width: 40rem;
+    text-align: center;
 
-  .about-solution-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
+    span {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+      color: $primary-color;
+    }
 
-  .about-solution-card {
-    background-color: white;
-    border: 1px solid #e4e7ee;
-    border-radius: 0.75rem;
-    padding: 1rem;
-
-    h3 {
+    h2 {
       margin: 0;
-      font-size: 1rem;
+      line-height: 1.05;
+      color: #163463;
     }
 
     p {
-      margin: 0.5rem 0 0;
-      font-size: 0.95rem;
+      margin: 1.25rem 0 0;
+      max-width: 40rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: $neutral-color;
+    }
+  }
+
+  .about-solution-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 5rem;
+
+    .about-solution-column {
+      display: flex;
+
+      .about-solution-card {
+        background-image: linear-gradient(135deg, #F0F9FF, #E0F2FE);
+        border-radius: 3rem;
+        padding: 1.5rem;
+        border: 1px solid rgba($primary-color, 0.1);
+        box-shadow: 0 1px 15px #0d74f214;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+
+        span {
+          width: 3rem;
+          height: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 1rem;
+          background: rgba($primary-color, 0.1);
+          color: $primary-color;
+          flex: 0 0 auto;
+          margin: 0.5rem;
+        }
+
+        h3 {
+          margin: 0.5rem;
+          font-size: 1.3rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: $title-color;
+        }
+
+        p {
+          margin: 0.5rem 2rem;
+          margin-top: 0.5rem;
+          font-size: 0.9rem;
+          line-height: 1.55;
+          color: $text-color;
+        }
+      }
     }
   }
 }
@@ -389,6 +478,12 @@ import { BeanOff, GlobeX, ServerCrash } from "@lucide/vue";
 
     .bout-problem-right {
       justify-content: flex-start;
+    }
+  }
+
+  .about-solution {
+    .about-solution-content {
+      grid-template-columns: 1fr;
     }
   }
 }
