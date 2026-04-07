@@ -8,7 +8,14 @@ import {
   HardDriveDownload,
   Leaf,
   ServerCrash,
+  MessageCircleCode,
+  BookOpenText,
+  Sprout,
+  GraduationCap,
+  University,
 } from "@lucide/vue";
+import UFRN from "@/assets/Reitoria,_UFRN,_Natal_(RN).webp";
+import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.webp";
 </script>
 
 <template>
@@ -127,24 +134,63 @@ import {
   </section>
 
   <section class="about-info">
-    <h2>A Parceria</h2>
-    <p>
-      O Inkstone surgiu da colaboração entre a UFRN e a ZISU, unindo
-      conhecimento técnico e linguagem para criar uma solução prática para
-      necessidades reais.
-    </p>
-
-    <div class="about-tags">
-      <span>UFRN</span>
-      <span>ZISU</span>
+    <div class="about-info-left">
+      <span>A Parceria</span>
+      <h2>Uma colaboração que cruza fronteiras</h2>
+      <p>
+        O Inkstone surgiu da colaboração entre a UFRN e a ZISU, unindo
+        conhecimento técnico e linguagem para criar uma solução prática para
+        necessidades reais.
+      </p>
+      <div class="about-info-left-universities">
+        <div>
+          <span> <GraduationCap :size="25" /></span>
+          <a
+            href="https://www.ufrn.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Universidade Federal do Rio Grande do Norte"
+          >
+            Universidade Federal do Rio Grande do Norte - Brazil
+          </a>
+        </div>
+        <div>
+          <span> <University :size="25" /></span>
+          <a
+            href="https://www.zisu.edu.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Zhengzhou Information Science and Technology University"
+          >
+            Zhejiang International Studies University - China
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="about-info-right">
+      <img :src="UFRN" alt="Reitoria da UFRN" class="ufrn" />
+      <img :src="ZISU" alt="Campus da ZISU" class="zisu" />
     </div>
   </section>
 
   <section class="about-quote">
-    <h2>我们的使命：歌罗西书 3:23-24</h2>
-    <p>
-      “无论做什么，都要从心里做，像是为主做，不是为人做，因你们知道，你们必从主那里得着基业为赏赐。你们所事奉的乃是主基督。”
-    </p>
+    <div class="about-quote-heading">
+      <span>O Propósito</span>
+      <h2>我们的使命：歌罗西书 3:23-24</h2>
+      <hr />
+      <p>
+        “无论做什么，都要从心里做，像是为主做，不是为人做，因你们知道，你们必从主那里得着基业为赏赐。你们所事奉的乃是主基督。”
+      </p>
+    </div>
+    <div class="about-quote-tags">
+      <span title="Global Collaboration"
+        ><MessageCircleCode :size="16" /> Open Source</span
+      >
+      <span title="Quality Education"
+        ><BookOpenText :size="16" /> Global Goal 4</span
+      >
+      <span title="Climate Action"><Sprout :size="16" /> Global Goal 13</span>
+    </div>
   </section>
   <BottomCard />
 </template>
@@ -164,12 +210,13 @@ import {
   align-items: flex-start;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     margin: 0;
+    color: #002f6c;
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin: 0;
     line-height: 1.5rem;
     color: $primary-color;
@@ -179,8 +226,8 @@ import {
     font-size: 1.125rem;
     line-height: 1.6;
     color: $neutral-color;
-    margin-top: 2rem;
-    max-width: 50rem;
+    margin-top: 4rem;
+    max-width: 45rem;
   }
 
   .beam-1 {
@@ -314,7 +361,7 @@ import {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  margin: 4rem 0;
 
   .about-solution-heading {
     max-width: 40rem;
@@ -356,7 +403,7 @@ import {
       display: flex;
 
       .about-solution-card {
-        background-image: linear-gradient(135deg, #F0F9FF, #E0F2FE);
+        background-image: linear-gradient(135deg, #f0f9ff, #e0f2fe);
         border-radius: 3rem;
         padding: 1.5rem;
         border: 1px solid rgba($primary-color, 0.1);
@@ -402,29 +449,150 @@ import {
   }
 }
 
-.about-tags {
-  margin-top: 1rem;
+.about-info {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin: 8rem 0;
 
-  span {
-    background-color: #dde8fb;
-    color: #15448b;
-    padding: 0.5rem 0.85rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
+  .about-info-left {
+    min-width: 30rem;
+    max-width: 40rem;
+
+    span {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+      color: $secondary-color;
+    }
+
+    h2 {
+      margin: 0;
+      line-height: 1.05;
+      color: #163463;
+    }
+
+    p {
+      margin: 1.25rem 0 0;
+      max-width: 40rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: $neutral-color;
+    }
+
+    .about-info-left-universities {
+      margin-top: 2rem;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-right: 2rem;
+        margin: 0.5rem 0;
+
+        span {
+          margin-bottom: 0;
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 2rem;
+          background-color: white;
+          box-shadow: 0 1px 5px #0d74f214;
+          color: $primary-color;
+          flex: 0 0 auto;
+        }
+
+        a {
+          display: block;
+          line-height: 1.4;
+          color: $title-color;
+          font-weight: 500;
+          text-decoration: none;
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: dashed underline;
+            text-decoration-color: $primary-color;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .about-info-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 30rem;
+    width: 100%;
+
+    img {
+      border-radius: 3rem;
+      box-shadow: 0 5px 35px #08356b82;
+      width: min(100%, 22rem);
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .ufrn {
+      position: absolute;
+      top: 0rem;
+      left: 2rem;
+    }
+
+    .zisu {
+      position: absolute;
+      bottom: 0rem;
+      right: 2rem;
+    }
   }
 }
 
 .about-quote {
-  margin: 3rem 0;
+  margin: 6rem 0;
   text-align: center;
 
-  h2 {
-    margin: 0;
-    font-size: 2rem;
+  .about-quote-heading {
+    max-width: 40rem;
+    margin: 0 auto;
+
+    span {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+      color: $secondary-color;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+  }
+
+  hr {
+    margin: 1rem auto;
+    width: 10rem;
+    height: 0.4rem;
+    background-image: linear-gradient(
+      to right,
+      #002f6c 0%,
+      #1d62c4 50%,
+      #287af6 100%
+    );
+    border: none;
+    border-radius: 1rem;
   }
 
   p {
@@ -433,6 +601,24 @@ import {
     color: $neutral-color;
     line-height: 1.7;
     font-style: italic;
+  }
+
+  .about-quote-tags {
+    margin: 1rem;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin: 0.5rem;
+    }
   }
 }
 
