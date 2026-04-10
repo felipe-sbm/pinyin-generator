@@ -151,7 +151,9 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
             rel="noopener noreferrer"
             title="Universidade Federal do Rio Grande do Norte"
           >
-            Universidade Federal do Rio Grande do Norte - Brazil
+            <span class="full-name"
+              >Universidade Federal do Rio Grande do Norte - Brazil</span
+            >
           </a>
         </div>
         <div>
@@ -162,14 +164,43 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
             rel="noopener noreferrer"
             title="Zhengzhou Information Science and Technology University"
           >
-            Zhejiang International Studies University - China
+            <span class="full-name"
+              >Zhejiang International Studies University - China</span
+            >
           </a>
         </div>
       </div>
     </div>
     <div class="about-info-right">
-      <img :src="UFRN" alt="Reitoria da UFRN" class="ufrn" />
-      <img :src="ZISU" alt="Campus da ZISU" class="zisu" />
+      <div>
+        <img :src="UFRN" alt="Reitoria da UFRN" class="ufrn" />
+        <div class="about-info-right-universities">
+          <span> <GraduationCap :size="25" /></span
+          ><a
+            href="https://www.ufrn.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Universidade Federal do Rio Grande do Norte"
+          >
+            <span class="short-name">UFRN</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <img :src="ZISU" alt="Campus da ZISU" class="zisu" />
+        <div class="about-info-right-universities">
+          <span> <University :size="25" /></span>
+
+          <a
+            href="https://www.zisu.edu.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Zhengzhou Information Science and Technology University"
+          >
+            <span class="short-name">ZISU</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -198,12 +229,16 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
 <style scoped lang="scss">
 @use "@/style.scss" as *;
 
+section {
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
 .about-hero {
-  padding: 1rem 0;
+  padding-block: 1rem;
   position: relative;
   overflow: visible;
   isolation: isolate;
-  height: 50rem;
+  min-height: clamp(30rem, 72vh, 50rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -298,60 +333,60 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 2.5rem;
     align-items: center;
-  }
 
-  .about-problem-left {
-    display: flex;
-    gap: 1.15rem;
-    flex-direction: column;
+    .about-problem-left {
+      display: flex;
+      gap: 1.15rem;
+      flex-direction: column;
 
-    .about-problem-card {
-      background-color: white;
-      border-radius: 2rem;
-      padding: 1.5rem;
-      border: 1px solid #0d74f214;
-      box-shadow: 0 1px 15px #0d74f214;
+      .about-problem-card {
+        background-color: white;
+        border-radius: 2rem;
+        padding: 1.5rem;
+        border: 1px solid #0d74f214;
+        box-shadow: 0 1px 15px #0d74f214;
 
-      h3 {
-        margin: 0;
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: #163463;
-
-        span {
-          width: 1.8rem;
-          height: 1.8rem;
+        h3 {
+          margin: 0;
+          font-size: 1rem;
           display: flex;
           align-items: center;
-          justify-content: center;
-          border-radius: 1rem;
-          background: rgba($tertiary-color, 0.15);
-          color: $tertiary-color;
-          flex: 0 0 auto;
+          gap: 0.5rem;
+          color: #163463;
+
+          span {
+            width: 1.8rem;
+            height: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            background: rgba($tertiary-color, 0.15);
+            color: $tertiary-color;
+            flex: 0 0 auto;
+          }
+        }
+
+        p {
+          margin: 0;
+          margin-top: 0.5rem;
+          font-size: 1rem;
+          line-height: 1.55;
+          color: $neutral-color;
         }
       }
-
-      p {
-        margin: 0;
-        margin-top: 0.5rem;
-        font-size: 1rem;
-        line-height: 1.55;
-        color: $neutral-color;
-      }
     }
-  }
 
-  .about-problem-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .about-problem-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    img {
-      width: min(100%, 30rem);
-      height: auto;
-      mix-blend-mode: multiply;
+      img {
+        width: min(100%, 30rem);
+        height: auto;
+        mix-blend-mode: multiply;
+      }
     }
   }
 }
@@ -450,16 +485,17 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
 }
 
 .about-info {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem;
   align-items: center;
   margin: 8rem 0;
 
   .about-info-left {
-    min-width: 30rem;
-    max-width: 40rem;
+    min-width: 0;
+    max-width: 42rem;
 
-    span {
+    > span {
       display: inline-block;
       margin-bottom: 0.75rem;
       font-size: 0.8rem;
@@ -488,12 +524,11 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
 
       div {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 0.75rem;
-        margin-right: 2rem;
         margin: 0.5rem 0;
 
-        span {
+        > span {
           margin-bottom: 0;
           padding: 0.5rem;
           display: flex;
@@ -514,6 +549,23 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
           text-decoration: none;
           font-weight: 500;
 
+          .full-name {
+            margin: 0;
+            padding: 0;
+            color: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            letter-spacing: normal;
+            text-transform: none;
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
+          }
+
+          .full-name {
+            display: inline;
+          }
+
           &:hover {
             text-decoration: dashed underline;
             text-decoration-color: $primary-color;
@@ -528,31 +580,40 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
   }
 
   .about-info-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 30rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    gap: 1rem;
     width: 100%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+    }
 
     img {
       border-radius: 3rem;
       box-shadow: 0 5px 35px #08356b82;
-      width: min(100%, 22rem);
-      height: auto;
+      width: 100%;
+      max-width: 21rem;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
       mix-blend-mode: multiply;
     }
 
-    .ufrn {
-      position: absolute;
-      top: 0rem;
-      left: 2rem;
+    > div:first-child {
+      justify-self: start;
     }
 
-    .zisu {
-      position: absolute;
-      bottom: 0rem;
-      right: 2rem;
+    > div:last-child {
+      justify-self: end;
+      margin-top: 2.75rem;
+    }
+
+    .about-info-right-universities {
+      display: none;
     }
   }
 }
@@ -605,6 +666,9 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
 
   .about-quote-tags {
     margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     span {
       display: inline-flex;
@@ -622,54 +686,249 @@ import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.web
   }
 }
 
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 660px) {
+@media (max-width: 1080px) {
   .about-hero {
-    height: auto;
-    min-height: 34rem;
-
-    h1,
-    h2 {
-      font-size: 2rem;
+    h1 {
+      font-size: 3.75rem;
     }
 
     h2 {
-      line-height: 1.2;
+      font-size: 3.2rem;
     }
 
     p {
-      font-size: 1rem;
-      margin-top: 1.25rem;
-    }
-  }
-
-  .about-section h2,
-  .about-quote h2 {
-    font-size: 1.5rem;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-problem {
-    .about-problem-content {
-      grid-template-columns: 1fr;
-    }
-
-    .bout-problem-right {
-      justify-content: flex-start;
+      max-width: 38rem;
     }
   }
 
   .about-solution {
     .about-solution-content {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 3rem;
+
+      .about-solution-column:last-child {
+        grid-column: 1 / -1;
+        justify-content: center;
+
+        .about-solution-card {
+          width: calc((100% - 1.25rem) / 2);
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  .about-info {
+    .about-info-right {
+      img {
+        max-width: 18rem;
+      }
+
+      .zisu {
+        margin-top: 1.75rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    min-height: 34rem;
+
+    h1 {
+      font-size: 3.1rem;
+    }
+
+    h2 {
+      font-size: 2.65rem;
+      line-height: 1;
+    }
+
+    p {
+      margin-top: 2rem;
+      font-size: 1.05rem;
+    }
+  }
+
+  .about-problem {
+    .about-problem-content {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .about-problem-left {
+      order: 2;
+      margin-top: 1rem;
+    }
+
+    .about-problem-right {
+      order: 1;
+      justify-content: center;
+      margin-top: 1rem;
+
+      img {
+        max-width: 15rem;
+      }
+    }
+  }
+
+  .about-info {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 5.5rem 0 4.5rem;
+
+    .about-info-left {
+      max-width: 100%;
+    }
+
+    .about-info-right {
+      max-width: 40rem;
+      margin: 0 auto;
+
+      img {
+        max-width: 19rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .about-problem,
+  .about-solution,
+  .about-quote {
+    margin: 3.5rem 0;
+  }
+
+  .about-solution {
+    .about-solution-content {
+      grid-template-columns: 1fr;
+      margin-top: 2.25rem;
+
+      .about-solution-column:last-child {
+        grid-column: auto;
+
+        .about-solution-card {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .about-quote {
+    .about-quote-heading {
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .about-info {
+    .about-info-right {
+      grid-template-columns: 1fr;
+      justify-items: center;
+
+      > div {
+        justify-self: center;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  section {
+    padding-inline: 0.875rem;
+  }
+
+  .about-hero {
+    min-height: 30rem;
+
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    p {
+      margin-top: 1.35rem;
+      font-size: 1rem;
+    }
+
+    .beam-1 {
+      width: 26rem;
+      height: 26rem;
+      right: -12rem;
+      top: -8rem;
+    }
+  }
+
+  .about-problem {
+    .about-problem-left {
+      .about-problem-card {
+        padding: 1.15rem;
+      }
+    }
+  }
+
+  .about-info {
+    margin: 4rem 0;
+
+    .about-info-left {
+      .about-info-left-universities {
+        display: none;
+      }
+    }
+
+    .about-info-right {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+
+      > div {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        max-width: none;
+        box-shadow: 0 1px 15px #08356b82;
+      }
+
+      .about-info-right-universities {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        line-height: 1;
+
+        > span {
+          padding: 0.45rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 2rem;
+          background-color: white;
+          box-shadow: 0 1px 5px #0d74f214;
+          color: $primary-color;
+          flex: 0 0 auto;
+        }
+
+        a {
+          color: $title-color;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 0.95rem;
+
+          &:hover {
+            text-decoration: dashed underline;
+            text-decoration-color: $primary-color;
+          }
+        }
+      }
     }
   }
 }

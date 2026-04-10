@@ -58,6 +58,7 @@
         font-size: 2.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
+        text-align: center;
       }
     }
 
@@ -99,6 +100,40 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .bottom {
+    margin: 3rem 0;
+
+    .card {
+      height: auto;
+      padding: 1.5rem;
+
+      .top h1 {
+        font-size: 1.2rem;
+      }
+
+      .buttons {
+        flex-direction: column;
+
+        button {
+          width: 100%;
+          margin-bottom: 0.75rem;
+        }
+
+        .support {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .bottom .card .top h1 {
+    font-size: 2rem;
   }
 }
 </style>
