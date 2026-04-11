@@ -9,9 +9,7 @@ import { BeanOffIcon, BugPlay, SmilePlus, Zap } from "@lucide/vue";
       <h2>Sem propagandas e sem coleta de dados</h2>
       <p>
         O intuito não é ganhar dinheiro e nem coletar dados como uma big tech
-        faz. O propósito é criar uma ferramenta leve e simples que qualquer um
-        que quiser aprender mandarim, apenas entre e aprenda. Sem login, sem
-        propagandas, sem distrações. Apenas você.
+        faz. Sem login, sem propagandas, sem distrações. Apenas você.
       </p>
     </div>
     <div class="cell feature-2">
@@ -79,6 +77,39 @@ import { BeanOffIcon, BugPlay, SmilePlus, Zap } from "@lucide/vue";
       margin: 0.8rem 0 0;
       line-height: 1.45;
     }
+
+    @media (max-width: 768px) {
+      padding: 2rem 4rem;
+
+      h1 {
+        font-size: 31px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      padding: 1.5rem 3rem;
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.35;
+      }
+    }
   }
 
   .feature-1 {
@@ -130,8 +161,9 @@ import { BeanOffIcon, BugPlay, SmilePlus, Zap } from "@lucide/vue";
     }
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: 835px) {
     grid-template-columns: 1fr;
+    gap: 1rem;
 
     .feature-1,
     .feature-2,
@@ -160,6 +192,10 @@ import { BeanOffIcon, BugPlay, SmilePlus, Zap } from "@lucide/vue";
         width: min(100%, 340px);
       }
     }
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.75rem;
   }
 }
 </style>

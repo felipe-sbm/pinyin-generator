@@ -64,6 +64,7 @@ import BottomCard from "@/components/BottomCard.vue";
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
+    margin: 1rem;
 
     h1 {
       font-size: 3rem;
@@ -90,6 +91,7 @@ import BottomCard from "@/components/BottomCard.vue";
       display: flex;
       align-items: center;
       justify-content: start;
+      gap: 1rem;
 
       button {
         border: none;
@@ -104,22 +106,24 @@ import BottomCard from "@/components/BottomCard.vue";
       .start {
         background-image: linear-gradient(90deg, #287af6 0%, #1d62c4 100%);
         color: white;
+        box-shadow: 0 5px 10px #0000001a;
 
         &:hover {
           background-image: linear-gradient(0deg, #1d62c4 0%, #287af6 100%);
+          box-shadow: 0 10px 10px #0000001a;
         }
       }
 
       .support {
-        background-color: #dddfe2;
-        color: $neutral-color;
-        margin-left: 1rem;
+        background-color: white;
+        color: $primary-color;
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        box-shadow: 0 5px 10px #0004161a;
 
         &:hover {
-          background-color: #cfd0d4;
+          box-shadow: 0 10px 10px #002fff1a;
         }
       }
     }
@@ -130,6 +134,7 @@ import BottomCard from "@/components/BottomCard.vue";
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem;
 
     img {
       max-width: 90%;
@@ -139,10 +144,11 @@ import BottomCard from "@/components/BottomCard.vue";
 }
 
 .features {
-  margin: 1rem 2rem 3rem 2rem;
+  margin: 1rem;
 
   .title {
     justify-content: center;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,6 +165,47 @@ import BottomCard from "@/components/BottomCard.vue";
       color: $neutral-color;
       font-weight: 500;
       margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+
+    .introduction {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .buttons {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        button {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          padding: 1rem;
+        }
+      }
+    }
+
+    .mascot {
+      img {
+        max-width: 60%;
+        height: auto;
+      }
     }
   }
 }

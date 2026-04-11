@@ -14,8 +14,8 @@ import {
   GraduationCap,
   University,
 } from "@lucide/vue";
-import UFRN from "@/assets/Reitoria,_UFRN,_Natal_(RN).webp";
-import ZISU from "@/assets/Zhejiang_International_Studies_University-campus2.webp";
+import UFRN from "@/assets/ufrn.webp";
+import ZISU from "@/assets/zisu.webp";
 </script>
 
 <template>

@@ -28,7 +28,8 @@
 @use "@/style.scss" as *;
 
 .bottom {
-  margin: 6rem 0;
+  margin: 6rem 2rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: center;
 
@@ -105,14 +106,15 @@
 
 @media (max-width: 600px) {
   .bottom {
-    margin: 3rem 0;
+    margin: 3rem 1rem;
+    padding: 0;
 
     .card {
       height: auto;
       padding: 1.5rem;
 
       .top h1 {
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 4vw, 1.5rem);
       }
 
       .buttons {
