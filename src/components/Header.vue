@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { Menu } from "@lucide/vue";
 import { useI18n } from "@/i18n";
+import { inkstone } from "@/version";
 
 const { t } = useI18n();
 const isMenuOpen = ref(false);
@@ -32,11 +33,9 @@ const closeMenu = () => {
       <RouterLink to="/about" exact-active-class="active">{{ t("nav.about") }}</RouterLink>
     </nav>
 
-    <select id="lang" title="Select your language">
-      <option value="zh">中文</option>
-      <option value="en">English</option>
-      <option value="pt">Português</option>
-    </select>
+    <div class="version">
+      <h6>Alfa <span>v{{ inkstone }}</span></h6>
+    </div>
 
     <div class="menu-button">
       <button @click="toggleMenu" title="Abrir Menu">
@@ -109,15 +108,23 @@ header {
     }
   }
 
-  select {
+  .version {
     background-image: linear-gradient(90deg, #287af6 0%, #1d62c4 100%);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.75rem;
-    cursor: pointer;
     font-weight: 550;
     transition: 500ms ease;
+
+    h6 {
+      margin: 0;
+      font-size: 0.75rem;
+
+      span {
+        font-weight: normal;
+      }
+    }
 
     &:focus {
       outline: dotted 3px $tertiary-color;

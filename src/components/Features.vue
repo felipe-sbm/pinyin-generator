@@ -1,42 +1,41 @@
 <script setup lang="ts">
 import { BeanOffIcon, BugPlay, SmilePlus, Zap } from "@lucide/vue";
+import { useI18n } from "@/i18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
   <div class="features">
     <div class="cell feature-1">
       <h1><SmilePlus /></h1>
-      <h2>Sem propagandas e sem coleta de dados</h2>
+      <h2>{{ t('home.features.feature1.title') }}</h2>
       <p>
-        O intuito não é ganhar dinheiro e nem coletar dados como uma big tech
-        faz. Sem login, sem propagandas, sem distrações. Apenas você.
+        {{ t('home.features.feature1.description') }}
       </p>
     </div>
     <div class="cell feature-2">
       <h1><Zap /></h1>
-      <h2>Veloz, e zás...</h2>
+      <h2>{{ t('home.features.feature2.title') }}</h2>
       <p>
-        O processamento local mantém o Inkstone rápido e com privacidade total.
-        Pois não usamos nenhum servidor, tudo é no seu dispositivo.
+        {{ t('home.features.feature2.description') }}
       </p>
     </div>
     <div class="cell feature-3">
       <h1>
         <BeanOffIcon />
       </h1>
-      <h2>Banco de Dados Unihan</h2>
+      <h2>{{ t('home.features.feature3.title') }}</h2>
       <p>
-        Uma base confiável e atualizada. Garanto que suas respostas serão
-        precisas. ;)
+        {{ t('home.features.feature3.description') }}
       </p>
     </div>
     <div class="cell feature-4">
       <div class="content">
         <h1><BugPlay /></h1>
-        <h2>Achou um bug aí?</h2>
+        <h2>{{ t('home.features.feature4.title') }}</h2>
         <p>
-          Estamos em fase de desenvolvimento, mas fique tranquilo, nosso projeto
-          é open-source, e se quiser contribuir, acesse um dos links do rodapé.
+          {{ t('home.features.feature4.description') }}
         </p>
       </div>
     </div>

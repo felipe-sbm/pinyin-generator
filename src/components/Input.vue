@@ -34,12 +34,12 @@ export default {
 .text-input {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
   background-color: #fcfdfd;
   border-radius: 1rem;
   box-shadow: 0 10px 15px rgba($primary-color, 0.15);
-  padding: 1rem 1.25rem 1.25rem 1.25rem;
-  min-height: 12rem;
+  padding: 1.25rem;
+  padding-top: 1rem;
+  min-height: 11.5rem;
 
   label {
     font-weight: 700;

@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import { Cog } from "@lucide/vue";
 import { computed } from "vue";
+import { useI18n } from "@/i18n";
 
 type ToneMode = "marks" | "numbers";
+
+const { t } = useI18n();
 
 const props = withDefaults(
   defineProps<{
     modelValue?: ToneMode;
+    settingsTitle?: string;
+    classicPinyin?: string;
+    numberedPinyin?: string;
   }>(),
   {
     modelValue: "marks",
-  }
+    settingsTitle: "Configurações da Saída de Texto",
+  },
 );
 
 const emit = defineEmits<{
@@ -27,18 +34,13 @@ const toneMode = computed<ToneMode>({
   <div class="settings">
     <div class="title">
       <Cog :size="14" />
-      <h5>Configurações da Saída de Texto</h5>
+      <h5>{{ t('generate.output.settings.title') }}</h5>
     </div>
 
     <div class="options">
       <label>
-        <input
-          type="radio"
-          name="toneMode"
-          value="marks"
-          v-model="toneMode"
-        />
-        Acentos (Pinyin Tradicional)
+        <input type="radio" name="toneMode" value="marks" v-model="toneMode" />
+        {{ t('generate.output.settings.classicPinyin') }}
       </label>
 
       <label>
@@ -48,7 +50,7 @@ const toneMode = computed<ToneMode>({
           value="numbers"
           v-model="toneMode"
         />
-        Números (Pinyin com números de tom)
+        {{ t('generate.output.settings.numberedPinyin') }}
       </label>
     </div>
   </div>

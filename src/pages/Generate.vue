@@ -3,7 +3,9 @@ import { computed, onMounted, ref } from "vue";
 import Input from "@/components/Input.vue";
 import Output from "@/components/Output.vue";
 import OutputSettings from "@/components/OutputSettings.vue";
+import { useI18n } from "@/i18n";
 
+const { t, tString } = useI18n();
 type ToneMode = "marks" | "numbers";
 
 const chineseText = ref("");
@@ -133,8 +135,8 @@ function toNumericTone(reading: string) {
 <template>
   <section class="generate-page">
     <div class="title">
-      <h1>Conversor Hanzi para Pinyin</h1>
-      <p>Insira seu texto abaixo para converter para Pinyin</p>
+      <h1>{{ t("generate.title") }}</h1>
+      <p>{{ t("generate.subtitle") }}</p>
     </div>
 
     <main class="generate-layout">
@@ -147,7 +149,12 @@ function toNumericTone(reading: string) {
       </section>
       <section class="panel">
         <Output :text="previewPinyin" :interactive="hasUserInput" />
-        <OutputSettings v-model="toneMode" />
+        <OutputSettings
+          v-model="toneMode"
+          :settingsTitle="tString('generate.output.settings.title')"
+          :classicPinyin="tString('generate.output.settings.classicPinyin')"
+          :numberedPinyin="tString('generate.output.settings.numberedPinyin')"
+        />
       </section>
     </main>
   </section>

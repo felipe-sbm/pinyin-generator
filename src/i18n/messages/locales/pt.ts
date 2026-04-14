@@ -2,6 +2,7 @@ import type { MessageTree } from '@/i18n/messages/types';
 import NotByAI_BR from "@/assets/BR/portuguese-light.png";
 
 export const ptMessages: MessageTree = {
+  // Componentes e utilitários
   routes: {
     home: { title: 'Início | Inkstone', description: 'Página inicial da Inkstone' },
     generate: { title: 'Converter Hanzi para Pinyin | Inkstone', description: 'Converter Hanzi para Pinyin na Inkstone.' },
@@ -58,6 +59,67 @@ export const ptMessages: MessageTree = {
   },
 
   // Páginas
+  home: {
+    hero: {
+      title: 'O melhor conversor de Hanzi para Pinyin',
+      subtitle: 'Mais rápido, sem prejudicar a natureza',
+      description: 'Com o Inkstone, você pode converter facilmente caracteres chineses em pinyin. Sempre disponível e fácil de usar.',
+
+      startButton: 'Experimente Agora',
+      startButtonAlt: 'Ir para o gerador de Pinyin',
+      supportButton: 'Apoie o Projeto',
+      supportButtonAlt: 'Abrir página de apoio ao projeto',
+    },
+
+    features: {
+      title: 'Por que usar o Inkstone?',
+      subtitle: 'Descubra os benefícios de utilizar nossa ferramenta.',
+
+      feature1: {
+        title: 'Sem propagandas e sem coleta de dados',
+        description: 'O intuito não é ganhar dinheiro e nem coletar dados como uma big tech faz. Sem login, sem propagandas, sem distrações. Apenas você.'
+      },
+      feature2: {
+        title: 'Veloz, e zás...',
+        description: 'O processamento local mantém o Inkstone rápido e com privacidade total. Pois não usamos nenhum servidor, tudo é no seu dispositivo.',
+      },
+      feature3: {
+        title: 'Banco de Dados Unihan',
+        description: 'Uma base confiável e atualizada. Garanto que suas respostas serão precisas. ;)'
+      },
+      feature4: {
+        title: 'Achou um bug aí?',
+        description: 'Estamos em fase de desenvolvimento, mas fique tranquilo, nosso projeto é open-source, e se quiser contribuir, acesse um dos links do rodapé.'
+      },
+    }
+  },
+
+  generate: {
+    title: 'Conversor de Hanzi para Pinyin',
+    subtitle: 'Insira seu texto abaixo para converter para Pinyin',
+    inputLabel: 'Texto em Hanzi',
+    outputLabel: 'Texto em Pinyin',
+
+    output: {
+      copyButton: 'Copiar Texto',
+      copyButtonAlt: 'Copiar o texto convertido para a área de transferência',
+      copiedConfirmation: 'Texto copiado!',
+      copyInactive: 'Digite um texto para habilitar a cópia.',
+      copyError: 'Cópia falhou. Tente novamente mais tarde.',
+
+      settings: {
+        title: 'Configurações da Saída de Texto',
+        classicPinyin: 'Acentos (pinyin Tradicional)',
+        numberedPinyin: 'Números (pinyin com números de tom)',
+      }
+    }
+  },
+
+  write: {
+    title: 'Em Desenvolvimento',
+    description: 'Estou estudando duro para trazer uma ferramenta de escrita de Hanzi em breve. Fique atento às atualizações! :D',
+  },
+
   about: {
     hero: {
       title1: 'Simples,',
@@ -132,10 +194,16 @@ export const ptMessages: MessageTree = {
       eyebrow: 'O Propósito',
       title: 'Nossa Missão: Colossenses 3:23-24',
       description: 'O que vocês fizerem façam de todo o coração, como se estivessem servindo o Senhor e não as pessoas. Lembrem que o Senhor lhes dará como recompensa aquilo que ele tem guardado para o seu povo, pois o verdadeiro Senhor que vocês servem é Cristo.',
-      
+
       goal1: 'Código Aberto',
       goal2: 'ODS 4',
       goal3: 'ODS 13',
     }
+  },
+
+  notFound: {
+    title: '404 - Página Não Encontrada',
+    description: 'Desculpe, a página que você está procurando não existe. :/',
+    homeLink: 'Voltar para a Página Inicial',
   }
 }

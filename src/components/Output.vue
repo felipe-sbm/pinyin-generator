@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Check, Copy } from "@lucide/vue";
 import { ref } from "vue";
+import { useI18n } from "@/i18n";
 
+const { t, tString } = useI18n();
 const props = withDefaults(
   defineProps<{
     text?: string;
@@ -35,24 +37,24 @@ async function copyOutput() {
 <template>
   <div class="output" :class="{ 'is-placeholder': !props.interactive }">
     <div class="title">
-      <label for="output">文本输出</label>
+      <label for="output">{{ t('generate.outputLabel') }}</label>
       <button
         type="button"
         @click="copyOutput"
         :disabled="!props.interactive"
         :title="
           !props.interactive
-            ? 'Digite um texto para habilitar a cópia'
+            ? tString('generate.output.copyInactive')
             : copied
-              ? 'Copiado!'
-              : 'Copiar texto'
+              ? tString('generate.output.copiedConfirmation')
+              : tString('generate.output.copyButtonAlt')
         "
         :aria-label="
           !props.interactive
-            ? 'Cópia desabilitada'
+            ? tString('generate.output.copyError')
             : copied
-              ? 'Texto copiado'
-              : 'Copiar texto'
+              ? tString('generate.output.copiedConfirmation')
+              : tString('generate.output.copyButtonAlt')
         "
       >
         <Check v-if="copied" :size="18" />
@@ -75,8 +77,9 @@ async function copyOutput() {
   justify-content: flex-start;
   background-image: linear-gradient(130deg, #0e172a 50%, #1b3262 100%);
   border-radius: 1rem;
-  padding: 1rem 1.25rem;
-  min-height: 12rem;
+  padding: 1.25rem;
+  padding-top: 1rem;
+  min-height: 11.5rem;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
 

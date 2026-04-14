@@ -211,7 +211,9 @@ const { t, tString } = useI18n();
       <span title="Quality Education"
         ><BookOpenText :size="16" /> {{ t("about.purpose.goal2") }}</span
       >
-      <span title="Climate Action"><Sprout :size="16" /> {{ t("about.purpose.goal3") }}</span>
+      <span title="Climate Action"
+        ><Sprout :size="16" /> {{ t("about.purpose.goal3") }}</span
+      >
     </div>
   </section>
   <BottomCard />
@@ -251,6 +253,7 @@ section {
   p {
     font-size: 1.125rem;
     line-height: 1.6;
+    font-weight: 300;
     color: $neutral-color;
     margin-top: 4rem;
     max-width: 45rem;

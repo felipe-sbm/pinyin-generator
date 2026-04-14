@@ -3,33 +3,38 @@ import Yang from "@/assets/yang.webp";
 import Features from "@/components/Features.vue";
 import { Star } from "@lucide/vue";
 import BottomCard from "@/components/BottomCard.vue";
+import { useI18n } from "@/i18n";
+
+const { t, tString } = useI18n();
+function support() {
+  window.location.href = "https://github.com/felipe-sbm/inkstone";
+}
 </script>
-<!-- O melhor conversor de Hanzi para Pinyin -->
-<!-- Com o Inkstone, você pode converter facilmente caracteres chineses em pinyin. Sempre disponível e fácil de usar. -->
+
+<!--  最好的汉字拼音转换器 -->
+<!-- 节省您的材料准备时间。这不仅仅是一个简单的改变，而是一次精简高效的打字体验。精准、简约、优雅。 -->
 <template>
   <section class="hero">
     <div class="introduction">
-      <h1>最好的汉字拼音转换器</h1>
-      <h2>O melhor conversor de Hanzi para Pinyin</h2>
-      <p>
-        节省您的材料准备时间。这不仅仅是一个简单的改变，而是一次精简高效的打字体验。精准、简约、优雅。
-      </p>
+      <h1>{{ t("home.hero.title") }}</h1>
+      <h2>{{ t("home.hero.subtitle") }}</h2>
+      <p>{{ t("home.hero.description") }}</p>
       <div class="buttons">
         <button
           @click="$router.push('/generate')"
           class="start"
-          title="Ir para o gerador de Pinyin"
+          :alt="tString('home.hero.startButtonAlt')"
         >
-          Começar Agora
+          {{ t('home.hero.startButton') }}
         </button>
         <button
-          :href="'https://github.com/felipe-sbm/inkstone/'"
+          @click="support"
           target="_blank"
           class="support"
-          title="Ir para o Github"
+          :alt="tString('home.hero.supportButtonAlt')"
         >
           <Star :size="16" />
-          Apoiar Projeto
+          {{ t('home.hero.supportButton') }}
         </button>
       </div>
     </div>
@@ -40,8 +45,8 @@ import BottomCard from "@/components/BottomCard.vue";
 
   <section class="features">
     <div class="title">
-      <h2>Por que usar o Inkstone?</h2>
-      <h3>Descubra os benefícios de utilizar nossa ferramenta.</h3>
+      <h2>{{ t('home.features.title') }}</h2>
+      <h3>{{ t('home.features.subtitle') }}</h3>
     </div>
     <Features />
   </section>
@@ -71,6 +76,7 @@ import BottomCard from "@/components/BottomCard.vue";
       color: $primary-color;
       font-weight: 700;
       margin-bottom: 0;
+      line-height: 3.5rem;
     }
 
     h2 {
