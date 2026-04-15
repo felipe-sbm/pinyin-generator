@@ -13,7 +13,6 @@ export const ptMessages: MessageTree = {
 
   common: {
     appTitle: 'Inkstone',
-    profilePictureAlt: 'Foto de ',
     loading: 'Carregando...',
     languageLabel: 'Idioma do sistema',
   },

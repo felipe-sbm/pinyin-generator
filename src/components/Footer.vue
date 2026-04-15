@@ -177,7 +177,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 620px) {
   footer {
     .credits {
       p {

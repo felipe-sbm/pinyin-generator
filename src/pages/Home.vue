@@ -11,8 +11,6 @@ function support() {
 }
 </script>
 
-<!--  最好的汉字拼音转换器 -->
-<!-- 节省您的材料准备时间。这不仅仅是一个简单的改变，而是一次精简高效的打字体验。精准、简约、优雅。 -->
 <template>
   <section class="hero">
     <div class="introduction">

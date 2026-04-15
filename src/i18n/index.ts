@@ -1,17 +1,17 @@
 import { readonly, ref } from 'vue';
 import { localeOptions, localeToIntl, messages, type Locale, type MessageTree } from './messages';
 
-const STORAGE_KEY = 'portfolio:locale';
-const DEFAULT_LOCALE: Locale = 'pt';
+const STORAGE_KEY = 'inkstone:locale';
+const DEFAULT_LOCALE: Locale = 'zh';
 
 function normalizeLocale(value?: string | null): Locale {
   if (!value) return DEFAULT_LOCALE;
 
   const normalized = value.toLowerCase();
 
+  if (normalized.startsWith('zh')) return 'zh';
   if (normalized.startsWith('pt')) return 'pt';
-  // if (normalized.startsWith('zh')) return 'zh';
-  // if (normalized.startsWith('en')) return 'en';
+  if (normalized.startsWith('en')) return 'en';
 
   return DEFAULT_LOCALE;
 }

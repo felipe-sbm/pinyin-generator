@@ -3,26 +3,26 @@
 // só para agilizar e organizar o processo.
 
 import type { Locale, MessageTree } from './messages/types';
-// import { enMessages } from './messages/locales/en';
+import { zhMessages } from './messages/locales/zh';
 import { ptMessages } from './messages/locales/pt';
-// import { zhMessages } from './messages/locales/zh';
+import { enMessages } from './messages/locales/en';
 
 export type { Locale, MessageTree };
 
 export const localeOptions: Array<{ value: Locale; label: string }> = [
-  // { value: 'en', label: 'English' },
+  { value: 'zh', label: '简体中文' },
   { value: 'pt', label: 'Português' },
-  // { value: 'zh', label: '简体中文' },
+  { value: 'en', label: 'English' },
 ];
 
 export const localeToIntl: Record<Locale, string> = {
-  // en: 'en-US',
+  zh: 'zh-CN',
   pt: 'pt-BR',
-  // zh: 'zh-CN',
+  en: 'en-US',
 };
 
 export const messages: Record<Locale, MessageTree> = {
-  // en: enMessages,
   pt: ptMessages,
-  // zh: zhMessages,
+  zh: zhMessages,
+  en: enMessages,
 };

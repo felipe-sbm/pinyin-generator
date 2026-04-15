@@ -1,4 +1,4 @@
-export type Locale = 'pt' /* depois colocar como: 'en' | pt | 'zh' */;
+export type Locale = 'zh' | 'pt' | 'en';
 
 export type MessageValue = string | string[] | MessageTree;
 

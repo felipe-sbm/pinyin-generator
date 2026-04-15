@@ -109,7 +109,13 @@ function github() {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
+  .bottom .card .top h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 620px) {
   .bottom {
     margin: 3rem 1rem;
     padding: 0;
@@ -135,12 +141,6 @@ function github() {
         }
       }
     }
-  }
-}
-
-@media (max-width: 850px) {
-  .bottom .card .top h1 {
-    font-size: 2rem;
   }
 }
 </style>
