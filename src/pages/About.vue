@@ -518,12 +518,12 @@ section {
 
       div {
         display: flex;
-        align-items: flex-start;
+        justify-items: center;
+        align-items: center;
         gap: 0.75rem;
         margin: 0.5rem 0;
 
-        > span {
-          margin-bottom: 0;
+        span {
           padding: 0.5rem;
           display: flex;
           align-items: center;
@@ -536,16 +536,13 @@ section {
         }
 
         a {
-          display: block;
-          line-height: 1.4;
           color: $title-color;
           font-weight: 500;
           text-decoration: none;
           font-weight: 500;
 
           .full-name {
-            margin: 0;
-            padding: 0;
+            display: inline;
             color: inherit;
             font-size: inherit;
             font-weight: inherit;
@@ -554,10 +551,6 @@ section {
             background: none;
             box-shadow: none;
             border-radius: 0;
-          }
-
-          .full-name {
-            display: inline;
           }
 
           &:hover {

@@ -3,6 +3,7 @@ import { localeOptions, localeToIntl, messages, type Locale, type MessageTree } 
 
 const STORAGE_KEY = 'inkstone:locale';
 const DEFAULT_LOCALE: Locale = 'zh';
+const URL_PARAM = 'lang';
 
 function normalizeLocale(value?: string | null): Locale {
   if (!value) return DEFAULT_LOCALE;
@@ -19,6 +20,10 @@ function normalizeLocale(value?: string | null): Locale {
 function detectInitialLocale(): Locale {
   if (typeof window === 'undefined') return DEFAULT_LOCALE;
 
+  const urlLocaleRaw = new URLSearchParams(window.location.search).get(URL_PARAM);
+  const urlLocale = normalizeLocale(urlLocaleRaw);
+  if (urlLocaleRaw && urlLocale) return urlLocale;
+
   const savedRaw = window.localStorage.getItem(STORAGE_KEY);
   if (savedRaw) return normalizeLocale(savedRaw);
 
@@ -32,7 +37,18 @@ function applyDocumentLang(locale: Locale) {
   document.documentElement.lang = localeToIntl[locale];
 }
 
+function applyUrlLocale(locale: Locale) {
+  if (typeof window === 'undefined') return;
+
+  const currentUrl = new URL(window.location.href);
+  if (currentUrl.searchParams.get(URL_PARAM) === locale) return;
+
+  currentUrl.searchParams.set(URL_PARAM, locale);
+  window.history.replaceState({}, '', currentUrl);
+}
+
 applyDocumentLang(activeLocale.value);
+applyUrlLocale(activeLocale.value);
 
 function getByPath(source: MessageTree, path: string): unknown {
   return path.split('.').reduce<unknown>((current, key) => {
@@ -67,6 +83,7 @@ export function tString(path: string, params?: Record<string, string | number>):
 export function setLocale(locale: Locale): void {
   activeLocale.value = locale;
   applyDocumentLang(locale);
+  applyUrlLocale(locale);
 
   if (typeof window !== 'undefined') {
     window.localStorage.setItem(STORAGE_KEY, locale);

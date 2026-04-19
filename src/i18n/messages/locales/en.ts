@@ -1,10 +1,10 @@
 import type { MessageTree } from '@/i18n/messages/types';
-import NotByAI_BR from "@/assets/BR/portuguese-light.png";
+import NotByAI_EN from "@/assets/EN/english-light.png";
 
 export const enMessages: MessageTree = {
     routes: {
-        home: { title: 'Home | Inkstone', description: 'Inkstone homepage' },
-        generate: { title: 'Hanzi to Pinyin Converter | Inkstone', description: 'Convert Hanzi to Pinyin with Inkstone.' },
+        home: { title: 'Pinyin Generator and Pinyin Converter | Inkstone', description: 'Online pinyin generator and converter to transform hanzi into pinyin with speed and privacy.' },
+        generate: { title: 'Online Pinyin Generator: Hanzi to Pinyin Converter | Inkstone', description: 'Use Inkstone to convert hanzi to pinyin with tone marks or numeric tones.' },
         write: { title: 'Write Hanzi | Inkstone', description: 'Practice writing Hanzi with Inkstone.' },
         about: { title: 'About | Inkstone', description: 'Learn more about Inkstone.' },
         notfound: { title: '404 | Inkstone', description: 'Page not found.' },
@@ -39,7 +39,7 @@ export const enMessages: MessageTree = {
             reportIssue: 'Report an issue',
             openSource: 'What is open source?',
         },
-        notByAI: NotByAI_BR,
+        notByAI: NotByAI_EN,
         notByAiAlt: 'Not By AI certificate',
         ufrn: 'Federal University of Rio Grande do Norte',
         zisu: 'Zhejiang International Studies University',
@@ -58,7 +58,7 @@ export const enMessages: MessageTree = {
 
     home: {
         hero: {
-            title: 'The Best Hanzi to Pinyin Converter',
+            title: 'Pinyin generator and Hanzi to Pinyin converter',
             subtitle: 'Fast, efficient, and eco-friendly',
             description: 'Save time on preparation. More than just a converter — a streamlined and efficient typing experience. Precise, minimal, and elegant.',
 
@@ -88,7 +88,12 @@ export const enMessages: MessageTree = {
                 title: 'Found a bug?',
                 description: 'The project is still in development. Feel free to contribute through our open-source links in the footer.'
             },
-        }
+        },
+
+        seo: {
+            title: 'Free online pinyin generator and converter',
+            description: 'If you searched for a pinyin generator or pinyin converter, Inkstone is built for this exact task: converting hanzi to pinyin accurately, without ads, and with local in-browser processing.',
+        },
     },
 
     generate: {

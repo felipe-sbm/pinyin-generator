@@ -4,8 +4,8 @@ import NotByAI_BR from "@/assets/BR/portuguese-light.png";
 export const ptMessages: MessageTree = {
   // Componentes e utilitários
   routes: {
-    home: { title: 'Início | Inkstone', description: 'Página inicial da Inkstone' },
-    generate: { title: 'Converter Hanzi para Pinyin | Inkstone', description: 'Converter Hanzi para Pinyin na Inkstone.' },
+    home: { title: 'Gerador de Pinyin e Conversor de Pinyin | Inkstone', description: 'Gerador de pinyin e conversor de pinyin online para transformar hanzi em pinyin com rapidez e privacidade.' },
+    generate: { title: 'Gerador de Pinyin Online: Conversor de Hanzi para Pinyin | Inkstone', description: 'Use o gerador de pinyin da Inkstone para converter hanzi para pinyin com acentos ou numeros de tom.' },
     write: { title: 'Escrever Hanzi | Inkstone', description: 'Escrever em Hanzi na Inkstone.' },
     about: { title: 'Sobre | Inkstone', description: 'Saiba mais sobre a Inkstone.' },
     notfound: { title: '404 | Inkstone', description: 'Página não encontrada.' },
@@ -60,7 +60,7 @@ export const ptMessages: MessageTree = {
   // Páginas
   home: {
     hero: {
-      title: 'O melhor conversor de Hanzi para Pinyin',
+      title: 'Gerador de Pinyin e conversor de Hanzi para Pinyin',
       subtitle: 'Mais rápido, sem prejudicar a natureza',
       description: 'Com o Inkstone, você pode converter facilmente caracteres chineses em pinyin. Sempre disponível e fácil de usar.',
 
@@ -111,7 +111,12 @@ export const ptMessages: MessageTree = {
         classicPinyin: 'Acentos (pinyin Tradicional)',
         numberedPinyin: 'Números (pinyin com números de tom)',
       }
-    }
+    },
+
+    seo: {
+      title: 'Gerador de pinyin e conversor de pinyin gratuito',
+      description: 'Se você pesquisou por gerador de pinyin ou conversor de pinyin, o Inkstone foi feito para isso: converter textos em hanzi para pinyin com alta precisão, sem anúncios e com processamento local no seu navegador de internet (online)!',
+    },
   },
 
   write: {

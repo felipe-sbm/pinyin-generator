@@ -49,6 +49,12 @@ function support() {
     <Features />
   </section>
 
+ <!-- Coloquei essa parte aqui para o SEO, mesmo que invisível, ainda aparece nas pesquisas.-->
+  <section class="seo-content" aria-label="SEO content">
+    <h2>{{ t('home.seo.title') }}</h2>
+    <p>{{ t('home.seo.description') }}</p>
+  </section>
+
   <BottomCard />
 </template>
 
@@ -171,6 +177,10 @@ function support() {
       margin-top: 0;
     }
   }
+}
+
+.seo-content {
+  display: none;
 }
 
 @media (max-width: 600px) {

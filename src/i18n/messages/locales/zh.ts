@@ -3,8 +3,8 @@ import NotByAI_CN from "@/assets/CN/chinese-light.png";
 
 export const zhMessages: MessageTree = {
     routes: {
-        home: { title: '首页 | Inkstone', description: 'Inkstone 首页' },
-        generate: { title: '汉字转拼音 | Inkstone', description: '在 Inkstone 中将汉字转换为拼音' },
+        home: { title: '拼音生成器与拼音转换器 | Inkstone', description: '在线拼音生成器与转换器，快速将汉字转换为拼音。' },
+        generate: { title: '在线拼音生成器：汉字转拼音 | Inkstone', description: '使用 Inkstone 将汉字转换为拼音，支持声调符号与数字标调。' },
         write: { title: '书写汉字 | Inkstone', description: '在 Inkstone 中练习书写汉字' },
         about: { title: '关于 | Inkstone', description: '了解 Inkstone 项目' },
         notfound: { title: '404 | Inkstone', description: '页面未找到' },
@@ -58,7 +58,7 @@ export const zhMessages: MessageTree = {
 
     home: {
         hero: {
-            title: '最佳汉字拼音转换工具',
+            title: '拼音生成器与汉字转拼音转换器',
             subtitle: '快速高效，环保节能',
             description: '节省准备时间。这不仅是转换工具，更是一种高效、简洁的输入体验。精准、优雅、可靠。',
 
@@ -88,7 +88,12 @@ export const zhMessages: MessageTree = {
                 title: '发现问题？',
                 description: '项目仍在开发中。如发现问题，欢迎通过开源社区参与改进。'
             },
-        }
+        },
+
+        seo: {
+            title: '免费在线拼音生成器与转换器',
+            description: '如果你正在搜索拼音生成器或拼音转换器，Inkstone 专为这项任务设计：高精度、无广告、本地浏览器处理。',
+        },
     },
 
     generate: {
